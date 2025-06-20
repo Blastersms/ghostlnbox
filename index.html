@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Antigo & Google Ads - Contas Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #030511;
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(3, 5, 17, 0.8), rgba(3, 5, 17, 0.8)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-bg {
+            background-color: rgba(17, 24, 39, 0.5);
+            border-color: rgba(167, 139, 250, 0.3);
+            backdrop-filter: blur(4px);
+        }
+        .btn-purple {
+            background-color: #8B5CF6;
+            transition: all 0.3s ease;
+        }
+        .btn-purple:hover {
+            background-color: #7C3AED;
+            transform: translateY(-2px);
+        }
+        .btn-outline-purple {
+            border-color: #A78BFA;
+            color: #A78BFA;
+            border-width: 2px;
+            transition: all 0.3s ease;
+        }
+        .btn-outline-purple:hover {
+            background-color: #8B5CF6;
+            color: white;
+            transform: translateY(-2px);
+        }
+        .text-purple-300 { color: #C4B5FD; }
+        .text-purple-400 { color: #A78BFA; }
+        .icon-purple { color: #A78BFA; }
+        .badge-purple { background-color: #8B5CF6; }
+        .gradient-card {
+            background-image: linear-gradient(to right, rgba(55, 48, 163, 0.3), rgba(30, 64, 175, 0.3));
+        }
+        .btn-blue {
+            background-color: #3B82F6;
+            transition: all 0.3s ease;
+        }
+        .btn-blue:hover {
+            background-color: #2563EB;
+            transform: translateY(-2px);
+        }
+        .lucide {
+            display: inline-block;
+            vertical-align: middle;
+            width: 1.25rem;
+            height: 1.25rem;
+            margin-right: 0.5rem;
+        }
+        .lucide-lg {
+            width: 2rem;
+            height: 2rem;
+            margin-right: 0.75rem;
+        }
+
+        /* Logo otimizada */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+        
+        .logo-img {
+            height: 3.5rem; /* h-14 */
+            width: auto;
+            max-width: none;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: pixelated;
+            filter: contrast(1.1) brightness(1.05);
+        }
+
+        /* Responsividade Mobile */
+        @media (max-width: 768px) {
+            /* Header mobile - centralizado */
+            .mobile-header {
+                justify-content: center;
+                text-align: center;
+                padding: 1.5rem 1rem;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .logo-img {
+                height: 4rem; /* Maior no mobile para melhor visibilidade */
+                width: auto;
+                max-width: 4rem;
+            }
+            
+            .mobile-brand h1 {
+                font-size: 1.75rem !important; /* text-2xl */
+                line-height: 1.2;
+                margin: 0;
+            }
+            
+            .mobile-brand p {
+                font-size: 0.875rem !important; /* text-sm */
+                margin: 0;
+            }
+            
+            /* Hero section mobile */
+            .mobile-hero {
+                margin-top: 0;
+                padding-top: 2rem;
+            }
+            
+            .mobile-hero h1 {
+                font-size: 2.5rem !important; /* text-4xl */
+                line-height: 1.1;
+                margin-bottom: 1rem;
+            }
+            
+            .mobile-hero p {
+                font-size: 1rem !important; /* text-base */
+                margin-bottom: 2rem;
+            }
+            
+            /* Buttons mobile */
+            .mobile-btn {
+                padding: 0.75rem 1.5rem !important;
+                font-size: 1rem !important;
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            
+            /* Cards mobile */
+            .mobile-card {
+                margin-bottom: 1.5rem;
+            }
+            
+            .mobile-card h3 {
+                font-size: 1.25rem !important; /* text-xl */
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            /* Footer mobile */
+            .mobile-footer {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .mobile-footer .logo-img {
+                height: 2.5rem !important; /* h-10 */
+                width: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Extra small screens */
+            .logo-img {
+                height: 3.5rem !important;
+                max-width: 3.5rem;
+            }
+            
+            .mobile-brand h1 {
+                font-size: 1.5rem !important; /* text-xl */
+            }
+            
+            .mobile-hero h1 {
+                font-size: 2rem !important; /* text-3xl */
+            }
+            
+            .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="text-gray-200">
+
+    <!-- Header -->
+    <header class="container mx-auto px-4 py-6">
+        <div class="flex items-center justify-center mobile-header">
+            <div class="logo-container mobile-brand">
+                <img src="https://i.postimg.cc/zvz9gDDj/Design-sem-nome-2-removebg-preview.png" alt="GHOSTLNBOX Logo" class="logo-img" />
+                <div>
+                    <h1 class="text-3xl font-bold text-white">GHOSTLNBOX</h1>
+                    <p class="text-purple-300 text-base">Contas Premium & Soluções</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 py-8 md:py-16 text-center hero-bg rounded-xl shadow-2xl mx-4 mobile-hero">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                Gmail Antigo & 
+                <span class="text-purple-400"> Google Ads</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
+                Contas premium verificadas e prontas para uso. Acelere seus negócios digitais com nossas soluções confiáveis e seguras.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="window.open('https://youtube.com', '_blank')" class="btn-purple text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg rounded-md font-semibold flex items-center justify-center mobile-btn">
+                    <svg class="lucide" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    Comprar Gmail Antigo
+                </button>
+                <button onclick="window.open('https://youtube.com', '_blank')" class="btn-outline-purple px-6 md:px-8 py-3 md:py-4 text-base md:text-lg rounded-md font-semibold flex items-center justify-center mobile-btn">
+                    <svg class="lucide" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.846 5.671a1 1 0 00.95.69h5.969c.969 0 1.371 1.24.588 1.81l-4.828 3.522a1 1 0 00-.364 1.118l1.846 5.671c.3.921-.755 1.688-1.54 1.118l-4.828-3.522a1 1 0 00-1.176 0l-4.828 3.522c-.784.57-1.838-.197-1.539-1.118l1.846-5.671a1 1 0 00-.364-1.118L2.28 11.1c-.783-.57-.38-1.81.588-1.81h5.969a1 1 0 00.95-.69l1.846-5.671z"></path></svg>
+                    Comprar Google Ads
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="container mx-auto px-4 py-8 md:py-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-8 md:mb-12">
+            Nossos Produtos Premium
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
+            <!-- Gmail Antigo Card -->
+            <div class="card-bg p-4 md:p-6 rounded-lg shadow-lg border border-purple-500/30 mobile-card">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-xl md:text-2xl text-white font-semibold flex items-center">
+                        <svg class="lucide-lg icon-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        Gmail Antigo
+                    </h3>
+                    <span class="badge-purple text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Premium</span>
+                </div>
+                <p class="text-gray-300 text-base md:text-lg mb-4 md:mb-6">
+                    Contas Gmail antigas e verificadas, ideais para marketing e negócios.
+                </p>
+                <ul class="space-y-2 md:space-y-3 mb-4 md:mb-6">
+                    <li class="flex items-center text-gray-300 text-sm md:text-base">
+                        <svg class="lucide text-green-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Contas criadas há mais de 2 anos
+                    </li>
+                    <li class="flex items-center text-gray-300 text-sm md:text-base">
+                        <svg class="lucide text-green-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Totalmente verificadas e ativas
+                    </li>
+                    <li class="flex items-center text-gray-300 text-sm md:text-base">
+                        <svg class="lucide text-green-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Histórico limpo e confiável
+                    </li>
+                    <li class="flex items-center text-gray-300 text-sm md:text-base">
+                        <svg class="lucide text-green-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Ideais para campanhas de email
+                    </li>
+                </ul>
+                <div class="text-2xl md:text-3xl font-bold text-white mb-2">
+                    R$ 49,90
+                    <span class="text-base md:text-lg text-gray-400 font-normal"> /conta</span>
+                </div>
+                <button onclick="window.open('https://youtube.com', '_blank')" class="w-full btn-purple text-white py-3 rounded-md font-semibold text-base md:text-lg">
+                    Comprar Gmail Antigo
+                </button>
+            </div>
+
+            <!-- Google Ads Card -->
+            <div class="card-bg p-4 md:p-6 rounded-lg shadow-lg border border-purple-500/30 mobile-card">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-xl md:text-2xl text-white font-semibold flex items-center">
+                        <svg class="lucide-lg icon-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        Conta Google Ads
+                    </h3>
+                    <span class="badge-purple text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">Premium</span>
+                </div>
+                <p class="text-gray-300 text-base md:text-lg mb-4 md:mb-6">
+                    Contas Google Ads prontas para campanhas publicitárias.
+                </p>
+                <ul class="space-y-2 md:space-y-3 mb-4 md:mb-6">
+                    <li class="flex items-center text-gray-300 text-sm md:text-base">
+                        <svg class="lucide text-green-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Contas pré-aprovadas e ativas
+                    </li>
+                    <li class="flex items-center text-gray-300 text-sm md:text-base">
+                        <svg class="lucide text-green-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Sem restrições de campanhas
+                    </li>
+                    <li class="flex items-center text-gray-300 text-sm md:text-base">
+                        <svg class="lucide text-green-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Histórico de qualidade elevado
+                    </li>
+                    <li class="flex items-center text-gray-300 text-sm md:text-base">
+                        <svg class="lucide text-green-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Suporte para todos os tipos de anúncios
+                    </li>
+                </ul>
+                <div class="text-2xl md:text-3xl font-bold text-white mb-2">
+                    R$ 89,90
+                    <span class="text-base md:text-lg text-gray-400 font-normal"> /conta</span>
+                </div>
+                <button onclick="window.open('https://youtube.com', '_blank')" class="w-full btn-purple text-white py-3 rounded-md font-semibold text-base md:text-lg">
+                    Comprar Google Ads
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="container mx-auto px-4 py-8 md:py-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-8 md:mb-12">
+            Por Que Escolher Nossas Contas?
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+            <div class="text-center p-4 md:p-6 card-bg rounded-lg border border-purple-500/30">
+                <div class="bg-purple-600/20 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mx-auto mb-4">
+                    <svg class="lucide-lg icon-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A9 9 0 109 19.618 9 9 0 0019.618 7.984z"></path></svg>
+                </div>
+                <h3 class="text-lg md:text-xl font-bold text-white mb-3">100% Seguro</h3>
+                <p class="text-gray-300 text-sm md:text-base">
+                    Todas as contas são verificadas e testadas antes da entrega. Garantia total de funcionamento.
+                </p>
+            </div>
+            <div class="text-center p-4 md:p-6 card-bg rounded-lg border border-purple-500/30">
+                <div class="bg-purple-600/20 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mx-auto mb-4">
+                    <svg class="lucide-lg icon-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-lg md:text-xl font-bold text-white mb-3">Entrega Rápida</h3>
+                <p class="text-gray-300 text-sm md:text-base">
+                    Receba suas contas em até 24 horas após a confirmação do pagamento.
+                </p>
+            </div>
+            <div class="text-center p-4 md:p-6 card-bg rounded-lg border border-purple-500/30">
+                <div class="bg-purple-600/20 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mx-auto mb-4">
+                    <svg class="lucide-lg icon-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.846 5.671a1 1 0 00.95.69h5.969c.969 0 1.371 1.24.588 1.81l-4.828 3.522a1 1 0 00-.364 1.118l1.846 5.671c.3.921-.755 1.688-1.54 1.118l-4.828-3.522a1 1 0 00-1.176 0l-4.828 3.522c-.784.57-1.838-.197-1.539-1.118l1.846-5.671a1 1 0 00-.364-1.118L2.28 11.1c-.783-.57-.38-1.81.588-1.81h5.969a1 1 0 00.95-.69l1.846-5.671z"></path></svg>
+                </div>
+                <h3 class="text-lg md:text-xl font-bold text-white mb-3">Qualidade Premium</h3>
+                <p class="text-gray-300 text-sm md:text-base">
+                    Contas com histórico limpo e alta reputação para máxima efetividade.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Info Section -->
+    <section class="container mx-auto px-4 py-8 md:py-16">
+        <div class="max-w-4xl mx-auto">
+            <div class="card-bg gradient-card p-6 md:p-8 rounded-lg shadow-xl border border-purple-500/30">
+                <h2 class="text-2xl md:text-3xl text-white font-bold text-center mb-6 md:mb-8 flex items-center justify-center flex-wrap">
+                    <svg class="lucide-lg icon-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    Como Funciona a Entrega
+                </h2>
+                <div class="grid md:grid-cols-3 gap-4 md:gap-6 text-center mb-6 md:mb-8">
+                    <div>
+                        <div class="btn-purple rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center mx-auto mb-3 text-white font-bold text-lg md:text-xl">1</div>
+                        <h4 class="text-base md:text-lg font-semibold text-white mb-2">Faça seu Pedido</h4>
+                        <p class="text-gray-300 text-xs md:text-sm">Clique em "Comprar" e será direcionado para finalizar sua compra.</p>
+                    </div>
+                    <div>
+                        <div class="btn-purple rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center mx-auto mb-3 text-white font-bold text-lg md:text-xl">2</div>
+                        <h4 class="text-base md:text-lg font-semibold text-white mb-2">Processamento</h4>
+                        <p class="text-gray-300 text-xs md:text-sm">Verificamos e preparamos suas contas premium em até 24h.</p>
+                    </div>
+                    <div>
+                        <div class="btn-purple rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center mx-auto mb-3 text-white font-bold text-lg md:text-xl">3</div>
+                        <h4 class="text-base md:text-lg font-semibold text-white mb-2">Receba no Gmail</h4>
+                        <p class="text-gray-300 text-xs md:text-sm">Você receberá todas as informações das contas diretamente no seu Gmail.</p>
+                    </div>
+                </div>
+                <div class="bg-purple-600/20 rounded-lg p-4 md:p-6 border border-purple-500/20">
+                    <h4 class="text-lg md:text-xl font-bold text-white mb-3 flex items-center flex-wrap">
+                        <svg class="lucide icon-purple mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        Entrega 100% via Gmail
+                    </h4>
+                    <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+                        Todas as contas e informações de acesso serão enviadas diretamente para o seu Gmail. 
+                        Você receberá um email com todos os dados necessários para começar a usar suas contas premium imediatamente. 
+                        Simples, rápido e seguro!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="container mx-auto px-4 py-8 md:py-16 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6">
+                Pronto para Acelerar seus Negócios?
+            </h2>
+            <p class="text-lg md:text-xl text-gray-300 mb-6 md:mb-8">
+                Não perca tempo criando contas do zero. Comece hoje mesmo com nossas contas premium verificadas.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="window.open('https://youtube.com', '_blank')" class="btn-purple text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg rounded-md font-semibold flex items-center justify-center mobile-btn">
+                    <svg class="lucide" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    Comprar Gmail Antigo - R$ 49,90
+                </button>
+                <button onclick="window.open('https://youtube.com', '_blank')" class="btn-blue text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg rounded-md font-semibold flex items-center justify-center mobile-btn">
+                    <svg class="lucide" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    Comprar Google Ads - R$ 89,90
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-purple-500/30 py-6 md:py-8 mt-8 md:mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4 mobile-footer">
+                <img src="https://i.postimg.cc/zvz9gDDj/Design-sem-nome-2-removebg-preview.png" alt="GHOSTLNBOX Logo" class="logo-img" style="height: 2rem; width: auto;" />
+                <span class="text-white font-bold text-base md:text-lg">GHOSTLNBOX</span>
+            </div>
+            <p class="text-gray-400 text-sm md:text-base">
+                © 2024 GHOSTLNBOX. Contas premium para impulsionar seus negócios digitais.
+            </p>
+            <p class="text-gray-500 text-xs md:text-sm mt-2">
+                Entrega garantida via Gmail • Suporte 24/7 • Contas verificadas
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
